@@ -3,17 +3,17 @@ package com.example.EmployeePayroll.services;
 import com.example.EmployeePayroll.controller.EmployeeController;
 import com.example.EmployeePayroll.dto.EmployeeDTO;
 import com.example.EmployeePayroll.entities.EmployeeEntity;
+import com.example.EmployeePayroll.interfaces.IEmployeeService;
 import com.example.EmployeePayroll.repositories.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmployeeService {
+public class EmployeeService implements IEmployeeService {
 
+    @Autowired
     EmployeeRepository employeeRepository;
 
-    public EmployeeService(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
 
     public EmployeeDTO get(Long id){
 
